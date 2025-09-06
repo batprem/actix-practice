@@ -1,0 +1,9 @@
+[package]
+name = "services_todos"
+edition = "2024"
+version.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+core = { path = "../../core" }

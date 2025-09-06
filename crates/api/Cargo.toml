@@ -1,0 +1,12 @@
+[package]
+name = "api"
+edition = "2024"
+version.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+actix-cors = "0.7.1"
+actix-http = { version = "3.11.1", features = ["compress-brotli", "compress-gzip", "rustls-0_23"] }
+actix-utils = "3.0.1"
+actix-web = { version = "4.11.0", features = ["macros", "compress-brotli", "compress-gzip", "cookies", "rustls-0_23"] }

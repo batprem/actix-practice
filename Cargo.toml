@@ -1,0 +1,21 @@
+[workspace]
+resolver = "2"
+members = [ "crates/api", "crates/core",
+    "crates/services/*"
+]
+
+[workspace.package]
+version = "0.1.0"
+authors = ["Prem <prem.ch@ku.th>"]
+license = "MIT"
+
+[profile.release.package.heed]
+debug-assertions = true
+
+[profile.dev.package.flate2]
+opt-level = 3
+
+[profile.dev.package.grenad]
+opt-level = 3
+[profile.dev.package.roaring]
+opt-level = 3
