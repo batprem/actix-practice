@@ -1,13 +1,18 @@
 [workspace]
 resolver = "2"
 members = [ "crates/api", "crates/core",
-    "crates/services/*"
+    "crates/services/*",
+    "crates/utils/*"
 ]
 
 [workspace.package]
 version = "0.1.0"
 authors = ["Prem <prem.ch@ku.th>"]
 license = "MIT"
+
+[workspace.dependencies]
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt"] }
 
 [profile.release.package.heed]
 debug-assertions = true
