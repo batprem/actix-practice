@@ -10,3 +10,14 @@ actix-cors = "0.7.1"
 actix-http = { version = "3.11.1", features = ["compress-brotli", "compress-gzip", "rustls-0_23"] }
 actix-utils = "3.0.1"
 actix-web = { version = "4.11.0", features = ["macros", "compress-brotli", "compress-gzip", "cookies", "rustls-0_23"] }
+bytes = "1.5"
+futures = "0.3.31"
+mock_llm = { path = "../services/mock_llm" }
+opentelemetry = "0.24"
+opentelemetry-otlp = "0.17"
+opentelemetry_sdk = { version = "0.24", features = ["rt-tokio"] }
+opentelemetry-semantic-conventions = "0.15"
+tracing = { workspace = true }
+tracing-actix-web = "0.7"
+tracing-opentelemetry = "0.25"
+tracing-subscriber = { workspace = true }
