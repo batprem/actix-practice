@@ -1,6 +1,6 @@
 use actix_web::{web, App, HttpServer, HttpRequest, HttpResponse};
 use reqwest::Client;
-use api::{hello, echo, manual_hello, stream_llm, middlewares};
+use api::{hello, echo, manual_hello, stream_llm, stream_sse, middlewares};
 use bytes::Bytes;
 use tracing_actix_web::TracingLogger;
 use tracing::info;
@@ -85,7 +85,8 @@ async fn main() -> std::io::Result<()> {
                     .service(hello)
                     .service(echo)
                     .route("/hey", web::get().to(manual_hello))
-                    .service(stream_llm),
+                    .service(stream_llm)
+                    .service(stream_sse)
             )
             .default_service(web::route().to(fallback_proxy))
     })
